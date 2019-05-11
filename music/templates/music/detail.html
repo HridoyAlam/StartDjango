@@ -1,7 +1,7 @@
 
 
 <link rel="stylesheet" href="style.css">
-<img src="{{ album.album_logo }}" alt="Avatar">
+<img src="{{ album.album_logo }}" alt="Avatar" height="200" width="300">
 
 <h1>{{ album.album_title }}</h1>
 
@@ -11,4 +11,4 @@
     {% for song in album.song_set.all %}
     <li>{{ song.song_title }} - {{ song.file_type }}</li>
     {% endfor %}
-</ul>>
+</ul>
