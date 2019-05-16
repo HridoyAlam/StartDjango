@@ -1,36 +1,17 @@
-<!--loads the path to your statics files -->
-{% load staticfiles %}
+{% extends  'music/base.html' %}
 
-<!--adding bootstrap -->
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">﻿
-<!--linking background images -->
-<link rel="stylesheet" type="text/css" href="{% static 'music/style.css' %}" />
+{% block body %}
 
-
-<!--adding navigations bar -->
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-
-        <!--logo -->
-        <div class="nav-header">
-            <a class="navbar-brand" href="{% url 'music:index' %}">RASH</a>
-
-        </div>
-
-    </div>
-
-</nav>
-
-
-{% if all_albums %}
-    <h1>Here are all albums</h1>
-    <ul>
-        {% for album in all_albums %}
-        <li>
-            <a href="{% url 'music:details' album.id %}">{{ album.album_title }}</a>
-        </li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <h3>you don't have any Album</h3>
-{% endif %}
+    {% if all_albums %}
+        <h1>Here are all albums</h1>
+        <ul>
+            {% for album in all_albums %}
+            <li>
+                <a href="{% url 'music:details' album.id %}">{{ album.album_title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h3>you don't have any Album</h3>
+    {% endif %}
+{% endblock %}
