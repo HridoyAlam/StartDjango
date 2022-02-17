@@ -19,3 +19,7 @@ rm -r new_project
 
 for Windows:
 rmdir new_project
+
+
+##### if else in one line/ terminoary operator
+first_alternative if condition else second_alternative
